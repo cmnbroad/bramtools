@@ -20,3 +20,15 @@ pub fn write_bam(in_file: &String, _out_file: &String) -> io::Result<()> {
     Ok(())
 }
 
+#[cfg(test)]
+mod test {
+    use crate::tools::write_bam;
+
+    #[test]
+    fn test_write_bam() {
+        let in_file = String::from("testdata/example.bam");
+        let out_file = String::from("testdata/out.bam");
+        write_bam(&in_file, &out_file).expect("test failed")
+    }
+
+}
