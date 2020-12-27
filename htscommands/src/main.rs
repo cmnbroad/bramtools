@@ -1,5 +1,5 @@
-use std::{env, io, fmt};
-use bramtools::CommandBundle;
+use std::{env, io};
+use htscommands::CommandBundle;
 
 fn main() -> io::Result<()> {
     let command = CommandBundle::new(env::args())
@@ -7,4 +7,3 @@ fn main() -> io::Result<()> {
     let _res = command.run();
     Ok(())
 }
-
