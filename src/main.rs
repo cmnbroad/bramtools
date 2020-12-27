@@ -1,12 +1,10 @@
-use std::{env, io, eprintln};
+use std::{env, io, fmt};
 use bramtools::CommandBundle;
 
 fn main() -> io::Result<()> {
-    let bundle = CommandBundle::new(env::args()).unwrap();
-    let config = Config::new(env::args()).unwrap_or_else(|err| {
-        eprintln!("Problem parsing arguments: {}", err);
-    });
-    let _res = bundle.run();
+    let command = CommandBundle::new(env::args())
+        .expect("Problem parsing arguments.");
+    let _res = command.run();
     Ok(())
 }
 
