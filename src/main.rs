@@ -1,5 +1,6 @@
 use std::{env, io};
-use bramtools::Bundle;
+
+use bramtools::cli::bundle::Bundle;
 
 fn main() -> io::Result<()> {
     let args: Vec<String> = env::args().collect();
