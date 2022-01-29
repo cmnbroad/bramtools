@@ -1,2 +1,1 @@
-Rust learning project/tools to manipulate genomics file formats.
-
+Playground for genomics using Rust.
