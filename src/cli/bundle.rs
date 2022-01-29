@@ -6,7 +6,7 @@ use crate::reads::bam;
 
 use crate::cli::command::{Command};
 
-#[derive(Debug)]
+#[derive(Clone, Debug, Display, PartialEq, Eq)]
 pub struct Bundle {
     pub command: Command,
     pub input_file: String,
@@ -29,7 +29,7 @@ impl Bundle {
     // return unit, or a dynamic error
     pub fn run(&self) -> Result<(), Box<dyn Error>> {
         println!("Command:{} Input:{} Output:{}\n", self.command, self.input_file, self.output_file);
-        bam::write_bam(&self.input_file, &self.output_file)?;
+        bam::read_bam(&self.input_file, &self.output_file)?;
         Result::Ok(())
     }
 }
