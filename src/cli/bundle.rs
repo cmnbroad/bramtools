@@ -6,7 +6,7 @@ use crate::reads::bam;
 
 use crate::cli::command::{Command};
 
-#[derive(Clone, Debug, Display, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq)]
 pub struct Bundle {
     pub command: Command,
     pub input_file: String,
