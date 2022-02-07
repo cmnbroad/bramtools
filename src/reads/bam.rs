@@ -8,7 +8,7 @@ use std::{
     fs::File,
     io::{self, BufReader}};
 
-use std::io::Read;
+//use std::io::Read;
 
 // Issues:
 // testdata/example.bam is rejected sue to the presence of lower case read group names
@@ -42,7 +42,7 @@ pub fn read_bam(in_file: &str, _out_file: &str) -> io::Result<()> {
 
     for result in reader.records() {
         let record = result?;
-        let read_name = CStr::from_bytes_with_nul(record.read_name());
+        let _read_name = CStr::from_bytes_with_nul(record.read_name());
         println!("{:?}", record);
     }
     // for result in reader.records() {
